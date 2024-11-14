@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Usuários</title>
+    <style>
+        body {
+            margin: 0;
+            padding-top: 20px;
+        }
+        .box {
+            font-size: 16px;
+            padding: 10px;
+            border: 1px solid gray;
+        }
+        .container{
+            display: flex;
+            justify-content: center;
+            margin: 0 auto;
+            width: fit-content;
+        }
+        .nome, .email{
+            background-color: lightgray;
+            display: flex;
+            flex-direction: column;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="nome">
+            <div class="box">
+                <strong>Nome</strong>
+            </div>
+
+            {% for usuario in usuarios %}
+            <div class="box">
+                {{ usuario.nome }}
+            </div>
+
+            {% endfor %}
+        </div>
+
+        <div class="email">
+            <div class="box"><strong>Email</strong></div>
+            {% for usuario in usuarios %}
+            <div class="box">{{ usuario.email }}</div>
+            {% endfor %}
+        </div>
+
+    </div>
+
+</body>
+</html>
